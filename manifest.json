@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Transcript Translator",
+  "version": "1.0",
+  "description": "YouTube transkriptini alır, çevirir ve seslendirir.",
+  "permissions": ["activeTab", "scripting", "tabs", "windows"], 
+  "host_permissions": ["https://www.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {}, 
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
